@@ -1,0 +1,54 @@
+{
+	"files": [
+		{
+			"path": "examples/IEEE/bare_jrnl.tex",
+			"bookmarks": [
+				{
+					"line": 51,
+					"column": 33,
+					"label": ""
+				},
+				{
+					"line": 358,
+					"column": 14,
+					"label": ""
+				},
+				{
+					"line": 466,
+					"column": 5,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "examples/Nature/sn-article.tex",
+			"bookmarks": [
+				{
+					"line": 25,
+					"column": 4,
+					"label": ""
+				},
+				{
+					"line": 72,
+					"column": 4,
+					"label": ""
+				},
+				{
+					"line": 128,
+					"column": 4,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "examples/Nature/sn-jnl.cls",
+			"bookmarks": [
+				{
+					"line": 294,
+					"column": 2,
+					"label": ""
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,162 @@
+\documentclass[aspectratio=169]{beamer}
+\usepackage[utf8]{inputenc}     %accept different input encodings
+\usepackage{ulem}               %package for underlining
+\usepackage{hyperref}           %hypertext
+\usepackage{fourier-otf}        %font utopia imported
+\usepackage{amsmath}            %mathematical facilities in LaTeX
+\usepackage{listings}           %for showing code in Latex, i.e. Python
+\usepackage{longtable}          %allows tables to flow over pages
+\usepackage{url}                %verbatim with url sensitive line
+\usepackage{enumerate}          %custom labels for lists
+\usepackage{cleveref}           %intelligent cross referencing
+
+
+\usetheme{AnnArbor}            % Theme Darmstadt (AnnArbor)
+\usecolortheme{beaver}        %color seahorse (beaver)
+\setbeamertemplate{caption}[numbered] %to get numbered captures
+
+% Bibliography
+\usepackage[backend=biber,style=IEEE]{biblatex} %compiler for bibliography, style (IEEE)
+\addbibresource{library.bib} %load in bibliography
+
+\title[Template]{\emph{Scientific Writing, Documentation, and Presenting}}
+\subtitle[]{Markdown, Latex, and Git(Hub)}
+\author[Alexander Heimann]{Alexander Heimann}
+\institute[]{NCKU - Department of Geomatics}
+\date[\today]{\today}
+
+\titlegraphic{\vspace{-1em}\includegraphics[height=2cm]{./img/logo.jpg}}
+
+\begin{document}
+
+\frame{\titlepage}      % create title page
+
+\begin{frame}           % add toc
+    \frametitle{Table of Contents}
+    \tableofcontents
+\end{frame}
+
+\AtBeginSection[]       % Start each section with a highlighted toc
+{
+    \begin{frame}
+        \frametitle{Table of Contents}
+        \tableofcontents[currentsection]
+    \end{frame}
+}
+
+\section{Introduction}
+
+\begin{frame}
+    \frametitle{About}
+    This beamer presentation demonstrates how to use some basic functions in \LaTeX
+
+    How to write a text \textbf{bold}, or \textit{italic}, or \underline{underline}, or how to put them \textbf{\textit{\underline{all together}}}.
+    How to epmhasize text:
+    \begin{block}{Something}
+        Test
+    \end{block}
+    Or in a different color?\\
+    \begin{alertblock}{With a list}
+        \begin{itemize}
+            \item Item 1
+            \item Item 2
+        \end{itemize}
+    \end{alertblock}
+\end{frame}
+
+\section{Example}
+
+\begin{frame}[allowframebreaks]         % allows the frame to brake and go over several pages
+    \frametitle{Different list types}
+    List items can be changed by adding [I], [i], [+]:
+    \begin{itemize}
+        \item unnumbered, standard
+    \end{itemize}
+    \begin{enumerate}
+        \item numbered standard
+    \end{enumerate}
+    \begin{itemize}
+        \item[$+$] unnumbered +
+    \end{itemize}
+    \begin{enumerate}
+        \item[I] numbered capital roman letters
+        \item[I] Do you know what is 4 in roman letters?
+    \end{enumerate}
+    \begin{enumerate}
+        \item[i] numbered small roman letters
+        \item[i] Do you know what is 4 in roman letters?
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Nested Lists}
+    % Customized bullets
+    \begin{itemize}
+        \item First item
+        \begin{itemize}
+            \item[\textbf{?}] My question.
+            \item[\$\$] Want to make money?
+            \item[$\int$] Mathematical list.
+            \item[$\blacksquare$] Black square.
+            \item[\textit{Remark}] My final remark.
+            \begin{itemize}
+                \item An item with an \textsc{equation}:
+                \[ \sum_{n=1}^{\infty} \frac{1}{n^2}=\frac{\pi^2}{6}\]
+            \end{itemize} 
+            \item Continue in list
+        \end{itemize}
+        \item last item
+    \end{itemize}
+\end{frame}
+
+\subsection{Comparison}
+\begin{frame}
+    \frametitle{Which reference is better?}
+
+    When we use references and citations we can choose several packages:
+    \begin{center}
+    \begin{columns}[T]
+        \begin{column}{0.5\textwidth}
+            LaTeX Style\\
+            \begin{equation}
+                E = mc^2\label{eq:einstein}
+            \end{equation}
+            \vfill
+            This equation (\ref{eq:einstein}) is from Einstein, \cite{Einstein1919}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            Cleveref Style\\
+            \begin{align}
+                a^2 + b^2 = c^2 \label{eq:pythagoras}\\
+                1 + 1 = 2 \label{eq:nonsense}\\
+                1+2  = \binom{a}{b} \label{eq:3}
+            \end{align}
+            \vfill
+            And here are the \crefrange{eq:pythagoras}{eq:3}         
+        \end{column}
+    \end{columns}
+\end{center}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Images}
+
+    \begin{figure}[t]
+        \centering
+        \includegraphics[width=0.25\textwidth]{./img/einstein.png}
+        \caption{This is a caption}
+        \label{fig:einstein}
+    \end{figure}
+
+    Now I am referencing to this figure \ref{fig:einstein} and to the equation \ref{eq:einstein}.
+
+\end{frame}
+
+\section{References}
+
+\begin{frame}
+    \frametitle{References}
+    \printbibliography
+\end{frame}
+
+\end{document}

@@ -1,0 +1,25 @@
+
+\documentclass{report}
+
+\usepackage{lipsum}  
+\usepackage{blindtext}
+\usepackage{hyperref}
+% Bibliography
+\usepackage[backend=biber,style=IEEE]{biblatex} %compiler for bibliography, style (IEEE)
+\addbibresource{library.bib} %load in bibliography
+
+\begin{document}
+
+\chapter{Introduction}
+\lipsum[2-4]
+
+\chapter{First Chapter}
+\input{ch1.tex}
+
+\chapter{Second Chapter}
+\input{ch2.tex}
+
+\addcontentsline{toc}{section}{References}
+\printbibliography
+
+\end{document}
